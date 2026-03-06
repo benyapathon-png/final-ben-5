@@ -1,4 +1,16 @@
-@BASE_URL = http://localhost:5001
+@BASE_URL = http://localhost:5002
 
 ### GET user profile
 GET {{BASE_URL}}/users/me
+Content-Type: application/json
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJQZW0iLCJpYXQiOjE3NzI3OTY5MjYsImV4cCI6MTc3NTM4ODkyNn0.EufuXPyDgctYJg_TDwMnK7QqWFCwL5u4Trv7uP71rwY
+
+### PUT edit 
+PUT  {{BASE_URL}}/users/me
+Content-Type: application/json
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJQZW0iLCJpYXQiOjE3NzI3OTY5MjYsImV4cCI6MTc3NTM4ODkyNn0.EufuXPyDgctYJg_TDwMnK7QqWFCwL5u4Trv7uP71rwY
+
+{
+    "username": "Pem",
+    "password": "123456"
+}

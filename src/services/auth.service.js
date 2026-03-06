@@ -21,7 +21,7 @@ export const createDoctorUser = async (username,hashedPassword,specialization) =
 
 export const findUserUsername = async(username)=>{
     const user = await prisma.user.findFirst({
-        where:{username:username}
+        where: {username: username}
     })
     return user
 } 

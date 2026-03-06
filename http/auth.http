@@ -1,4 +1,4 @@
-@BASE_URL = http://localhost:5001
+@BASE_URL = http://localhost:5002
 
 ### try run
 GET {{BASE_URL}}
@@ -29,6 +29,7 @@ Content-Type: application/json
 {
     "username": "Dan",
     "password": "123456"
+
 }
 
 ### Login user

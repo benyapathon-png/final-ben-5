@@ -1,26 +1,14 @@
-import createError from 'http-errors'
-import jwt from 'jsonwebtoken'
-import { findDoctorUsername, findUserUsername } from './auth.service.js'
 
-async function authUserCheck(req,res,next) {
-    try {
-        const authorization = req.headers.authorization
-        if(!authorization) {
-            throw createError(401,"Unauthorization")
-        }
+import jwt from "jsonwebtoken"
+import { prisma } from "../config/prismaClient.js"
 
-        const token = authorization.split(" ")[1]
-        const payload = jwt.verify(token,process.env.JWT_SECRET,{
-            algorithms: ['HS256']
-        })
-        const userDoctor = await findUserUsername(payload.id)
-        if(!userDoctor) {
-            throw createError(401,"Unauthorization")
+export const editUser = async (id,username,hashedPassword) => {
+    const user = await prisma.user.update({
+        where:{id:id},
+        data: {
+            username,
+            password:hashedPassword
         }
-        req.result = userDoctor
-    } catch(error) {
-        next(error)
-    }
+    })
+    return user
 }
-
-export default authUserCheck

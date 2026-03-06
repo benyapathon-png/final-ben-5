@@ -65,7 +65,8 @@ export async function doctorLoginController(req,res,next) {
             token: token,
             user: {
                 id:doctor.id,
-                username: doctor.username
+                username: doctor.username,
+                specialization:doctor.specialization
             }
         }) 
     }catch (error) {

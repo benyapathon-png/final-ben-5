@@ -1,0 +1,17 @@
+@BASE_URL = http://localhost:5002
+
+### GET doctor profile 
+GET {{BASE_URL}}/doctors/me
+Content-Type: application/json
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJEYW4iLCJpYXQiOjE3NzI4MDEyNTQsImV4cCI6MTc3NTM5MzI1NH0.JsCovG0ka0GdSo5xp1Y85iS_1OpI4fhoY-mWhChnZ6w
+
+### PUT doctor profile 
+PUT {{BASE_URL}}/doctors/me
+Content-Type: application/json
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJEYW4iLCJpYXQiOjE3NzI4MDEyNTQsImV4cCI6MTc3NTM5MzI1NH0.JsCovG0ka0GdSo5xp1Y85iS_1OpI4fhoY-mWhChnZ6w
+
+{
+    "username": "Dan",
+    "password": "123456",
+    "specialization": "Orthopedist"
+}
