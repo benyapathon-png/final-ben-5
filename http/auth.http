@@ -1,0 +1,41 @@
+@BASE_URL = http://localhost:5001
+
+### try run
+GET {{BASE_URL}}
+
+### Register doctor
+POST {{BASE_URL}}/auth/register/doctor
+Content-Type: application/json 
+
+{
+    "username": "Dan",
+    "password": "123456",
+    "specialization": "Orthopedist"
+}
+
+### Register user
+POST {{BASE_URL}}/auth/register/user
+Content-Type: application/json 
+
+{
+    "username": "Pem",
+    "password": "123456"
+}
+
+### Login doctor
+POST {{BASE_URL}}/auth/login/doctor
+Content-Type: application/json 
+
+{
+    "username": "Dan",
+    "password": "123456"
+}
+
+### Login user
+POST {{BASE_URL}}/auth/login/user
+Content-Type: application/json 
+
+{
+    "username": "Pem",
+    "password": "123456"
+}
